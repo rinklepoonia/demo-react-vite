@@ -13,7 +13,7 @@ const Services = () => {
      `${data.title} ${data.subtitle}`.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <div className='bg-red-500 min-h-screen py-25'>
+    <div className=' min-h-screen py-25'>
 <div className='max-w-[1320px] mx-auto px-5'>
 
   
@@ -21,7 +21,7 @@ const Services = () => {
   <div className='grid grid-cols-3 items-center gap-10 mt-10'>
   {filterItem.length > 0 ? (
       filterItem.slice(0,3).map((data) => (
-      <div className='border border-white flex flex-col gap-5 p-2 min-h-[250px]'>
+      <div className='border border-black rounded-lg flex flex-col gap-5 p-4 min-h-[250px]'>
         <p>{data.title}</p>
         <p>{data.subtitle}</p>
       </div>
