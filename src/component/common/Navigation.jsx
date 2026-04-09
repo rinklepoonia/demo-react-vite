@@ -11,7 +11,7 @@ const Navigation = () => {
   }
 
   return (
-    <div className='py-10 px-5'>
+    <div className=''>
       <div className={`max-w-[1320px] px-5 mx-auto  rounded-lg py-4 ${navBgColor()}`}>
        <div className='flex items-center justify-between'>
          <a href="#"> <img width="128" height="60" src="/public/assets/images/svg/logo.svg" alt="logo" /></a>

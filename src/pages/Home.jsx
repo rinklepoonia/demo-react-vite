@@ -3,7 +3,7 @@ import Services from '../component/home/Services'
 
 const Home = () => {
   return (
-    <div>
+    <div className='min-h-[calc(100vh-300px)] bg-green-100 overflow-y-auto'>
         <Services/>
     </div>
   )

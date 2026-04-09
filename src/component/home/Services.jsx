@@ -1,7 +1,17 @@
-import React, { useState } from 'react'
+import React  from 'react'
+import { useSearchParams } from 'react-router-dom';
 
 const Services = () => {
-   const [search, setSearch] = useState("");
+   const [searchParams, setSearchParams] = useSearchParams();
+    const search = searchParams.get('search') || ''
+      const handelChange = (value) => {
+     if(value === ''){
+         setSearchParams({})
+     }else{
+         setSearchParams({search:value.toLowerCase()})
+     }
+      }
+
   const SEARCH_ITEMS_DATA = [
     { title : "Specialized Translations" , subtitle : "Industry-specific translations by subject matter experts. We understand the nuances of technical, legal, medical, and financial terminology to ensure accuracy and context."},
     { title : "Certified Translations" , subtitle : "Official translations with certification for legal validity. Perfect for immigration "},
@@ -13,11 +23,11 @@ const Services = () => {
      `${data.title} ${data.subtitle}`.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <div className=' min-h-screen py-25'>
+    <div className=' '>
 <div className='max-w-[1320px] mx-auto px-5'>
 
   
-  <input onChange={(e) => setSearch(e.target.value)} type="search" name="seach" id="" placeholder='search here' className='border border-white rounded h-[50px] outline-0 p-2' />
+  <input onChange={(e) => handelChange(e.target.value)} type="search" name="seach" id="" placeholder='search here' className='border border-black rounded h-[50px] outline-0 p-2' />
   <div className='grid grid-cols-3 items-center gap-10 mt-10'>
   {filterItem.length > 0 ? (
       filterItem.slice(0,3).map((data) => (
